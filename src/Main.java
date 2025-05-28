@@ -4,7 +4,7 @@
 public class Main {
     public static void main(String[] args){
         BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.ordenarEmOrdemCrescente();
+        bubbleSort.ordenarBubbleSort();
         System.out.println(bubbleSort);
     }
 
