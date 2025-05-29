@@ -1,11 +1,11 @@
+import controller.AlgorimosController;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args){
-        BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.ordenarBubbleSort();
-        System.out.println(bubbleSort);
+        int[] numeros = {7, 4, 5, 8, 3, 6, 10, 9};
+        AlgorimosController controller = new AlgorimosController();
+        controller.iniciar(numeros);
+
     }
 
 }
