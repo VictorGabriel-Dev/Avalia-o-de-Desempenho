@@ -2,6 +2,7 @@ package controller;
 
 import model.BubbleSort;
 import model.Ordenador;
+import model.SelectionSort;
 import view.AlgoritmosView;
 
 public class AlgorimosController {
@@ -18,7 +19,7 @@ public class AlgorimosController {
                     algoritmo = new BubbleSort();
                     break;
                 case 2:
-                   // algoritmo = new SelectionSort();
+                    algoritmo = new SelectionSort();
                     break;
                 case 3:
                     //algoritmo = new HeapSort();

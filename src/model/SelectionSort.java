@@ -1,15 +1,22 @@
-public class SelectionSort {
-    static void selectionSort(int [] valor){
-        int n = valor.length;
+package model;
+public class SelectionSort implements Ordenador {
+    @Override
+    public int[] ordenar(int[] numeros) {
+        int n = numeros.length;
 
-        for(int i=0; i< n -1; i++){
-            int menor_idx = i;
+        for(int i=0; i < n -1; i++){
+            int min_idx = i;
 
-            for(int j= i+1; j< n; j++){
-                if(valor[j] < valor[menor_idx]){
-                    menor_idx = j;
+            for (int j = i+1; j < n; j++){
+                if (numeros[j] < numeros[min_idx]){
+                    min_idx = j;
                 }
             }
+            //substituir valores
+            int temp = numeros[i];
+            numeros[i] = numeros[min_idx];
+            numeros[min_idx] = temp;
         }
+        return numeros;
     }
 }
