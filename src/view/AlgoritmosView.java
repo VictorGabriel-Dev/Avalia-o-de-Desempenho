@@ -15,11 +15,12 @@ public class AlgoritmosView {
         return scanner.nextInt();
     }
 
-    public void mostrarResultado(String nomeAlgoritmo, int[] resultado) {
+    public void mostrarResultado(String nomeAlgoritmo, int[] resultado, long duracao) {
         System.out.print(nomeAlgoritmo + ": ");
         for (int num : resultado) {
             System.out.print(num + " ");
         }
+        System.out.println("\nTempo de execução: " + duracao + " ns");
         System.out.println();
     }
 

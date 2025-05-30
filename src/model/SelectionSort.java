@@ -12,7 +12,7 @@ public class SelectionSort implements Ordenador {
                     min_idx = j;
                 }
             }
-            //substituir valores
+
             int temp = numeros[i];
             numeros[i] = numeros[min_idx];
             numeros[min_idx] = temp;

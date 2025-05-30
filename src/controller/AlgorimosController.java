@@ -4,6 +4,7 @@ import model.BubbleSort;
 import model.Ordenador;
 import model.SelectionSort;
 import view.AlgoritmosView;
+import static java.lang.System.nanoTime;
 
 public class AlgorimosController {
     private AlgoritmosView view = new AlgoritmosView();
@@ -32,8 +33,11 @@ public class AlgorimosController {
                     continue;
             }
 
+            long inicio = nanoTime();
             int[] resultado = algoritmo.ordenar(numeros);
-            view.mostrarResultado(algoritmo.getClass().getSimpleName(), resultado);
+            long fim = nanoTime();
+            long duracao = fim - inicio;
+            view.mostrarResultado(algoritmo.getClass().getSimpleName(), resultado, duracao);
         }
     }
 }
