@@ -2,7 +2,7 @@ package model;
 
 public class HeapSort implements Ordenador{
   @Override
-    public void sort(int[] arr) {
+    public int[] ordenar(int[] arr) {
         int n = arr.length;
 
         // Constrói o heap (reorganiza o array)
@@ -20,6 +20,7 @@ public class HeapSort implements Ordenador{
             // Reaplica o heapify no heap reduzido
             heapify(arr, i, 0);
         }
+        return arr;
     }
 
     // Função para manter a propriedade de heap

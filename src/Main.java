@@ -1,11 +1,11 @@
-import controller.AlgorimosController;
+import controller.AlgoritmosController;
+import model.LeitorArquivo;
 
 public class Main {
-    public static void main(String[] args){
-        int[] numeros = {7, 4, 5, 8, 3, 6, 10, 9};
-        AlgorimosController controller = new AlgorimosController();
-        controller.iniciar(numeros);
-
+    public static void main(String[] args) {
+        int[] numeros = LeitorArquivo.lerArquivo("dados1.txt");
+        if (numeros != null) {
+            new AlgoritmosController().iniciar(numeros);
+        }
     }
-
 }
