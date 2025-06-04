@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> lista = new ArrayList<>();
+
+        // Leitura do arquivo "dados1.txt", um número por linha
+        try (BufferedReader br = new BufferedReader(new FileReader("dados1.txt"))) {
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                linha = linha.trim(); // Remove espaços em branco
+                if (!linha.isEmpty()) {
+                    lista.add(Integer.parseInt(linha));
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+            return;
+        }
+
+        // Converte para array
+        int[] dados = lista.stream().mapToInt(i -> i).toArray();
+
+        // Ordena usando Heap Sort
+        HeapSort hs = new HeapSort();
+        hs.sort(dados);
+
+        // Imprime resultado
+        System.out.println("Dados ordenados com Heap Sort:");
+        for (int n : dados) {
+            System.out.print(n + " ");
+        }
+    }
+}
